@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/null_safety.dart';
 
 void main() {
   runApp(MyApp());
@@ -105,7 +106,13 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          _incrementCounter();
+          EmployeeDetails? _employeeDetails =
+              new EmployeeDetails("Sunil", address: "Basavakalyan");
+          print(_employeeDetails.firstName);
+          print(_employeeDetails.lastName ?? "This is lastname");
+          print(_employeeDetails.address!);
+
+          //_incrementCounter();
         },
         tooltip: 'Increment',
         child: Icon(Icons.add),
